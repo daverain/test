@@ -1,0 +1,2561 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=C:\Users\Wolfgang\AppData\Roaming\nvm\v18.16.0\node_modules\md-to-pdf\markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=C:\Users\Wolfgang\AppData\Roaming\nvm\v18.16.0\node_modules\md-to-pdf\node_modules\highlight.js\styles\github.css*/</style></head>
+	<body class="">
+		<h1 id="tilgungsrechner---klimafreundliches-bauen-kfn">Tilgungsrechner - Klimafreundliches Bauen (KFN)</h1>
+<h2 id="kfw-bankengruppe">KfW Bankengruppe</h2>
+<p><strong>Dokumentinformation</strong>
+<a id="tab1"></a></p>
+<table>
+<thead>
+<tr>
+<th>Dokumentname</th>
+<th>Stand (Datum)</th>
+<th>Autor</th>
+<th>Überprüfung</th>
+<th>Vertraulichkeit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gemeinsames Fachliches und Technisches Design</td>
+<td>21.11.2023</td>
+<td></td>
+<td>intern</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Tabelle 1: Dokumenteninformationen</p>
+<p><strong>Dokumenthistorie</strong>
+<a id="tab2"></a></p>
+<table>
+<thead>
+<tr>
+<th>Datum</th>
+<th>Status¹</th>
+<th>Überarbeitet von</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>06.07.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>Initiale Erstellung</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36756 Kapitel 4 - FRONTEND - Form 1 - Implementierung der Form 1</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36758 Kapitel 4 - Implementierung der Validierung des "Weiter" &amp; "Jetzt berechnen"-Buttons</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36760 Kapitel 4 - FRONTEND - Form 2 - Implementierung der Form 2: Auswahl Kreditart</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36761 Kapitel 4 - Implementierung "Bearbeiten"- Funktion des Accordions + zugehörigem Verhalten</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36763 Kapitel 4 - FRONTEND - Form 2a - Implementierung der Form 2a</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36765 Kapitel 4 - FRONTEND - Form 3 -Implementierung der Form 3: Vergleich zur Hausbank</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36766 Kapitel 4 - FRONTEND - Form 2b - Implementierung der Form 2b</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36768 Kapitel 4 - FRONTEND - Form 4b -Implementierung der Form 4b: Tilgungsdaten</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36770 Kapitel 4 - FRONTEND - Form 4d -Implementierung der Form 4d: Tabelle Vorteilsberechnung</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36771 Kapitel 4 - FRONTEND - Form 4a - Implementierung der Form 4a: Ihre Angaben auf einen Blick</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36772 Kapitel 4 - FRONTEND - Form 4c  -Implementierung der Form 4c: Tabellarischer Tilgungsplan</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36775 Kapitel 4 - FRONTEND - Umsetzung Responsives Verhalten (inkl. mobile View)</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36767 Kapitel 4.2 - SST - Implementierung Aufruf des VSP Rechenkerns</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36762 Kapitel 4.3 - SST - Einbindung interne Produkt-API</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36764 Kapitel 4.3 - SST - Produkt- und Zinskonditionen aus der internen und externen Produkt-API</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34110 Kapitel 4.4 - Routing / URL</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36774 Kapitel 4.4 - Overlay Verhalten &amp; iframe Einbindung (entwicklungstechnisch)</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34029 Kapitel 5 - Bereitstellung Infrastruktur für KFN-Rechner</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34273 Kapitel 8.1 - Umgebungsvariablen setzen</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34124 Kapitel 8.5.2 - Bereitstellung Pipeline KfN - Alles Stages (DEV, Test, Pre, Prod)</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34098 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34116 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34125 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34128 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34129 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34132 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34272 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34778 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#34786 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#35213 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#35214 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#35683 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#35695 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36755 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36777 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36807 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36808 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36826 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36827 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#36896 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#37290 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#37858 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#38460 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>16.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>#38534 - Keine Doku notwendig</td>
+</tr>
+<tr>
+<td>20.11.2023</td>
+<td>In Bearbeitung</td>
+<td>N.Nguyen</td>
+<td>Freigabe RM0010365</td>
+</tr>
+</tbody></table>
+<p>Tabelle 2: Dokumenthistorie</p>
+<p><strong>Begriffe, Abkürzung, Definition</strong>
+<a id="tab3"></a></p>
+<table>
+<thead>
+<tr>
+<th>Abkürzung</th>
+<th align="center">Begriffe</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KFN</td>
+<td align="center">Klimafreundlicher Neubau</td>
+<td>Förderprogramm</td>
+</tr>
+</tbody></table>
+<p>Tabelle 3: Begriffe, Abkürzungen, Definitionen</p>
+<p><strong>Relevante Dokumente</strong>
+<a id="tab4"></a></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Ablageort im DMS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FD Zins und Tilgungsplan [1]</td>
+<td><a href="https://kfw-f-dmswebp.kfw.kfwgruppe.net/dms_kfw/exe/eb.exe?cfgs=../cfgs/dmsapi.cfg&amp;p=d&amp;MaskName=dopendoc&amp;docid=d3055b413-b01f-11e8-80c1-c72ae4ede186">Link DMS</a></td>
+</tr>
+<tr>
+<td>FD Produktdefinition [2]</td>
+<td><a href="https://kfw-f-dmswebp.kfw.kfwgruppe.net/dms_kfw/exe/eb.exe?cfgs=../cfgs/dmsapi.cfg&amp;p=d&amp;MaskName=dopendoc&amp;docid=dd484e526-6b00-11e8-aa60-de25ddd59a9f">Link DMS</a></td>
+</tr>
+<tr>
+<td>FD Kalkulationsservice [3]</td>
+<td><a href="https://kfw-f-dmswebp.kfw.kfwgruppe.net/dms_kfw/exe/eb.exe?cfgs=../cfgs/dmsapi.cfg&amp;p=d&amp;MaskName=dopendoc&amp;docid=d5ddbd4bb-021f-11e6-ae69-c72ae4ede186">Link DMS</a></td>
+</tr>
+<tr>
+<td>aBK</td>
+<td><a href="https://kfw-f-dmswebp.kfw.kfwgruppe.net/dms_kfw/exe/eb.exe?cfgs=../cfgs/dmsapi.cfg&amp;p=d&amp;MaskName=dopendoc&amp;docid=d4b161487-3c2e-11ee-837c-a7ae5024b6d7">Link DMS</a></td>
+</tr>
+<tr>
+<td>SiKon</td>
+<td>wird nachgereicht</td>
+</tr>
+</tbody></table>
+<p>Tabelle 4: Übersicht Referenzdokumente</p>
+<p><strong>Mitgeltende Dokumente</strong>
+<a id="tab5"></a></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Ablageort im DMS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Tabelle 5: Mitgeltende Dokumente</p>
+<p><strong>Verantwortliche / Ersteller / Mitwirkende</strong>
+<a id="tab6"></a></p>
+<table>
+<thead>
+<tr>
+<th>Name, OE</th>
+<th align="center">Funktion</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Annemarie Kern, ITe7</td>
+<td align="center">IT-Consultant</td>
+</tr>
+<tr>
+<td>Nam Nguyen, ITe7</td>
+<td align="center">IT-Consultant</td>
+</tr>
+<tr>
+<td>Elisa Schwaab, ITe7</td>
+<td align="center">PO</td>
+</tr>
+</tbody></table>
+<p>Tabelle 6: Verantwortliche / Ersteller / Mitwirkende</p>
+<p><strong>Qualitätssicherung</strong>
+<a id="tab7"></a></p>
+<table>
+<thead>
+<tr>
+<th>Name, OE</th>
+<th align="center">Funktion</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Elisa Schwaab, ITe7</td>
+<td align="center">PO</td>
+</tr>
+<tr>
+<td>Annemarie Kern, ITe7</td>
+<td align="center">IT-Consultant</td>
+</tr>
+<tr>
+<td>Nam Nguyen, ITe7</td>
+<td align="center">IT-Consultant</td>
+</tr>
+</tbody></table>
+<p>Tabelle 7: Qualitätssicherung</p>
+<p>[[<em>TOC</em>]]</p>
+<h1 id="tabellenverzeichnis">Tabellenverzeichnis</h1>
+<p><a href="#tab1">Tabelle 1: Dokumenteninformationen</a><br>
+<a href="#tab2">Tabelle 2: Dokumenthistorie</a><br>
+<a href="#tab3">Tabelle 3: Begriffe, Abkürzungen, Definitionen</a><br>
+<a href="#tab4">Tabelle 4: Übersicht Referenzdokumente</a><br>
+<a href="#tab5">Tabelle 5: Mitgeltende Dokumente</a><br>
+<a href="#tab6">Tabelle 6: Verantwortliche / Ersteller / Mitwirkende</a><br>
+<a href="#tab7">Tabelle 7: Qualitätssicherung</a><br>
+<a href="#tab8">Tabelle 8: Überblick über den Bildschirmablauf</a><br>
+<a href="#tab9">Tabelle 9: Angezeigte Elemente - Sektion "Angaben zum Wohngebäude"</a><br>
+<a href="#tab10">Tabelle 10: Angezeigte Elemente - Sektion "Angaben zum Kredit"</a><br>
+<a href="#tab11">Tabelle 11: Angezeigte Elemente - Sektion "Vergleich zur Hausbank"</a><br>
+<a href="#tab12">Tabelle 12: Angezeigte Elemente - Sektion "Ergebnis - Ihre Angaben"</a><br>
+<a href="#tab13">Tabelle 13: Angezeigte Elemente - Sektion "Ergebnis - Ihre Angaben"</a><br>
+<a href="#tab14">Tabelle 14: Angezeigte Elemente - Sektion "Ergebnis - Tabellarischer Tilgungsplan"</a><br>
+<a href="#tab15">Tabelle 15: Angezeigte Elemente - Sektion "Ergebnis - Vorteilsrechner"</a><br>
+<a href="#tab16">Tabelle 16: Enthaltene Komponente im Frontend</a><br></p>
+<h1 id="abbildungsverzeichnis">Abbildungsverzeichnis</h1>
+<h1 id="1-zielsetzung-abhängigkeiten-und-randbedingungen-gemäß-fachvorgabe">1	Zielsetzung, Abhängigkeiten und Randbedingungen gemäß Fachvorgabe</h1>
+<p>Der Rechner „Klimafreundliches Bauen“ ist eine Ausprägung der Applikation „Tilgungsrechner Wohnen/Bauen/Sanieren“ in Form eines Internet Web-Rechners, welcher auf Basis der eingegeben Kredithöhe und Auswahl des Verwendungszweckes und Kreditparameter (Zins, Laufzeit &amp; Freijahre) einen Tilgungsplan sowie Vergleichszins eines potenziellen Kredits anzeigt. Er ist somit ein Tilgungs- sowie Vorteilsrechner in einem. </p>
+<p>Der Rechner zeigt dem Nutzer somit an, wie hoch die monatliche Belastung und wie hoch der finanzielle Vorteil aus den Förderprodukten sind.
+Folgende Produkte sind im Förderprogramm enthalten:</p>
+<ul>
+<li>   Klimafreundlicher Neubau Wohngebäude – private Selbstnutzung (297) <a href="kfw.de/297">(KFW-Produktseite 297)</a></li>
+<li>   Klimafreundlicher Neubau Wohngebäude (298) <a href="kfw.de/297">(KFW-Produktseite 297)</a></li>
+</ul>
+<p>Je nach Produkt und Förderstufe ergeben sich unterschiedliche Implikationen für maximale Kreditbeträge, Zinsen und andere Parameter. Der Rechner zeigt je nach Auswahl der Eingabeparameter einen entsprechenden Tilgungsplan sowie einen Vergleichszins eines branchenüblichen Kredits an.</p>
+<h2 id="11-zielsetzung-und-auswirkungen">1.1	Zielsetzung und Auswirkungen</h2>
+<p>Im Auftrag des BMWSB (Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen) wurde zum 01.03.2023 ein neues Förderprogramm aufgesetzt mit den oben genannten Produkten.
+Das Förderziel besteht im Neubau klimafreundlicher Gebäude. Das heißt, gefördert wird der Neubau oder Ersterwerb (innerhalb von 12 Monaten nach Bauabnahme) neu errichteter klimafreundlicher Wohn- und Nichtwohngebäude. </p>
+<h2 id="12-ausgangssituation-und-auslöser">1.2	Ausgangssituation und Auslöser</h2>
+<p>Im Auftrag des BMWSB übernimmt die KfW im Rahmen der Bundesförderung effiziente Gebäude - Klimafreundlicher Neubau (KFN) die Finanzierung und Förderung des Neubaus sowie Ersterwerbs von klimafreundlichen Wohngebäuden in Deutschland.
+In diesem Zusammenhang soll ein zugehöriger Rechner als Teil der Applikation Tilgungsrechner Wohnen/Bauen/Sanieren aufgesetzt werden.</p>
+<h2 id="13-leistungsabgrenzung">1.3	Leistungsabgrenzung</h2>
+<p>Die nachstehenden Informationen beziehen sich ausschließlich auf den Rechner „Klimafreundliches Bauen“ der Applikation „Tilgungsrechner Wohnen/Bauen/Sanieren“, nicht jedoch auf die Rechner bzw. weiteren Programme der Applikation. 
+Im ersten Release werden nur die Programme zur Kreditförderung mit Zinsverbilligung, kein Tilgungszuschuss (297, 298) berücksichtigt. Die Programme 498, 499 sind aktuell nicht enthalten.</p>
+<p>Dieses FuTD beschreibt nicht:
+-	die Berechnung von Tilgungsplänen für Bildungsdarlehen. Diese werden in Fachliches Design_BK_Tilgungsrechner beschrieben.
+-	die Berechnung von zu zahlende Vorfälligkeitsentschädigungsbeträge für KfW-Darlehen. Diese werden im FK VFE-Rechner beschrieben.
+-	die Berechnung der Tilgungszuschüsse für Investitionen ist aktuell noch nicht im KFN vorgesehen. Diese werden in Fachliches Design und Pflichtenheft_Zuschussrechner beschrieben.</p>
+<h2 id="14-abhängigkeiten">1.4	Abhängigkeiten</h2>
+<p>Die Berechnung der Tilgungsparameter erfolgt über die Tilgungsrechnerschnittstelle. Ist diese nicht verfügbar, so kann auch keine Berechnung stattfinden.
+Weiterhin werden die Produktkonditionen sowie der aktuelle Zins via der internen bzw. der externen Produkt-API bezogen. Ist diese nicht verfügbar, so kann nur mit einem alten Stand berechent werden.</p>
+<h2 id="15-annahmen">1.5	Annahmen</h2>
+<p>Nicht relevant.</p>
+<h2 id="16-rahmenbedingungen">1.6	Rahmenbedingungen</h2>
+<p>Es ist der Styleguide der KfW und die weiteren Regelungen zur Webentwicklung und Barrierefreiheit einzuhalten. Des Weiteren hat sich der Tilgungsrechner in das aktuelle Design und die User Experience der meine.kfw.de und kfw.de eingefügt.</p>
+<h3 id="161-mengengerüst">1.6.1	Mengengerüst</h3>
+<p>Als Mengengerüst basierend auf Click-Zahlen für die KFW Produktseite kfw.de/297 werden maximal 50-100 Nutzer stündlich erwartet.</p>
+<h3 id="162-kapazität--verbrauchsverhalten">1.6.2	Kapazität / Verbrauchsverhalten</h3>
+<p>Wie in 1.6.1 beschrieben. </p>
+<h3 id="163-gesetzliche-grundlagen">1.6.3	Gesetzliche Grundlagen</h3>
+<p>Nicht relevant.</p>
+<h2 id="17-nicht-funktionale-anforderungen">1.7	Nicht-funktionale Anforderungen</h2>
+<h3 id="171-benutzeroberfläche">1.7.1	Benutzeroberfläche</h3>
+<h4 id="1711-styleguide">1.7.1.1	Styleguide</h4>
+<p>Das neue KfW Basis-Design (wie es vom Projekt "KfW goes mobile" verwendet wird) muss konsistent angewendet werden. Basis ist der Styleguide von kfw.de für Onlineauftritte.</p>
+<h4 id="1712-web-zugangsleitlinien">1.7.1.2	Web-Zugangsleitlinien</h4>
+<p>Die Applikation unterliegt strikt den Zugangsstandards der Verordnung zur Schaffung barrierefreier Informationstechnik nach dem Behindertengleichstellungsgesetz BITV 2.0 (Ordiance on the Creation of Barrier-Free InFormation Technology 2.0: BITV) Prioritätsstufe I, in dem im weiten Teilen Äquivalenz zu den Webinhaltszugangsleitlinien (Web Content Accessibility Guidelines: WCAG) Stufe A und AA des W3C herrscht.
+•	BITV 2.0 <a href="https://www.gesetze-im-internet.de/bitv_2_0/BJNR184300011.html">https://www.gesetze-im-internet.de/bitv_2_0/BJNR184300011.html</a>
+•	WCAG: <a href="http://www.w3.ODERg/TR/WCAG20/">http://www.w3.ODERg/TR/WCAG20/</a> [English]</p>
+<h4 id="1713-webbrowser">1.7.1.3	Webbrowser</h4>
+<p>Die gängigen Browser (Chrome, Safari, Edge) in der aktuellen Version werden von der Applikation unterstützt. </p>
+<h4 id="1714-mobile-geräte--responsive-design">1.7.1.4	Mobile Geräte / Responsive Design</h4>
+<p>Die Applikation beinhaltet ein Responsive Design, das auch auf mobilen Endgeräten wiedergegeben werden kann. 
+Für Testzwecke werden folgende Geräteansichten im Entwicklermodus des Browsers verwendet.</p>
+<ul>
+<li>Viewport XL - Standardmodus Microsoft Edge Browser</li>
+<li>Viewport S - Geräteemulation-Modus Microsoft Edge Browser - Format iPhone 12 Pro</li>
+</ul>
+<h3 id="172-effizienz-und-performance">1.7.2	Effizienz und Performance</h3>
+<p>Der KFN soll bei jeder Aktion, die mit dem Rechner durchgeführt wird, keine sichtbaren Wartezeiten erkennen. Insbesondere bei den Dropdown-Auswahlen zur Bestimmung der Krediteigenschaften. Da die anzuzeigenden Dropdown-Felder und deren Befüllung durch eine Anfrage an das neue Produktmodell gesteuert wird, ist hier besonderer Wert darauf zu legen das dem Nutzer keine Wartezeiten entstehen. Die Dropdown-Auswahl muss augenblicklich möglich sein. Unter der Berücksichtigung, dass jede Auswahl per Dropdown zu einer weiteren Anfrage an die Produktmodell-Schnittstelle führt, ist sicherzustellen, dass die Schnittstelle auch mehrere 1000 Anfrage pro Sekunde verarbeiten kann ohne Performanceeinbußen.</p>
+<h3 id="173-zuverlässigkeit">1.7.3	Zuverlässigkeit</h3>
+<p>Die Applikation hat eine erweiterte Verfügbarkeit von 24x7. Microsoft Azure garantiert eine Verfügbarkeit ihrer Infrastruktur von 99,9%. Die Verfügbarkeit der restlichen Komponenten richtet sich nach der KfW.de-Seite und der aus der VSP genutzten Backend-Services aus.
+Service	Verfügbarkeit
+Servicezeit der Applikation	Mo – So 0:00 – 24:00
+Support Zeit UHD	Mo – Fr 7:00 – 19:45
+Allgemeine IT-Servicezeit	Mo – Do 8:15 – 17:00 Fr 8:15 – 15:45
+Tabelle 8 Servicezeiten und Verfügbarkeit</p>
+<h3 id="174-änderbarkeit">1.7.4	Änderbarkeit</h3>
+<p>Nicht relevant.</p>
+<h3 id="175-sicherheit">1.7.5	Sicherheit</h3>
+<p>Siehe Sicherheitskonzept für KFN-Rechner.</p>
+<h3 id="176-anforderungen-an-die-technische-realisierung">1.7.6	Anforderungen an die technische Realisierung</h3>
+<p>Nicht relevant.</p>
+<h3 id="177-anforderungen-an-das-deployment">1.7.7	Anforderungen an das Deployment</h3>
+<p>Nicht relevant.</p>
+<h3 id="178-gesetzliche-grundlagen">1.7.8	Gesetzliche Grundlagen</h3>
+<p>Nicht relevant.</p>
+<h3 id="179-datenschutz">1.7.9	Datenschutz</h3>
+<p>Es werden keine Daten erfasst oder gespeichert.</p>
+<h3 id="1710-skalierbarkeit">1.7.10	Skalierbarkeit</h3>
+<p>Eine Skalierung der Nutzungslast soll möglich sein. Das Azure Framework bietet hier die relevanten Möglichkeiten zur Skalierung.</p>
+<h3 id="1711-stabilität">1.7.11	Stabilität</h3>
+<p>Keine gesonderten Anforderungen. Stabilität des produktiven Systems durch Staging der Umgebung wird sichergestellt.</p>
+<h3 id="1712-verfügbarkeitwiederherstellbarkeitwiederanlaufklasse">1.7.12	Verfügbarkeit/Wiederherstellbarkeit/Wiederanlaufklasse</h3>
+<p>Eine 24x7 Azure Umgebung wird genutzt. Längere Downtimes in Produktion sind nicht geplant. Die Verfügbarkeit richtet sich darüber hinaus an den Backend-Services der VSP.
+Außerplanmäßige Downtimes sind möglich und müssen angekündigt sein. </p>
+<h3 id="1713-konfigurierbarkeit">1.7.13	Konfigurierbarkeit</h3>
+<p>Nicht relevant.</p>
+<h3 id="1714-kompatibilität">1.7.14	Kompatibilität</h3>
+<p>HTML-Oberflächen müssen mind. HTML5 und CSS 3 erfüllen. Java Script muss unterstützt und im Browseraktiviert sein. Weitere gesonderten Anforderungen sind nicht formuliert.</p>
+<h3 id="1715-testbarkeit">1.7.15	Testbarkeit</h3>
+<p>Nicht relevant.</p>
+<h2 id="18-sicherheitsbezogene-anforderungen">1.8	Sicherheitsbezogene Anforderungen</h2>
+<h3 id="181-schutzbedarf">1.8.1	Schutzbedarf</h3>
+<p>Die Anwendung wurde als VIV 1-2-2 klassifiziert. </p>
+<p>Vertraulichkeit: 1
+Integrität: 2
+Verfügbarkeit: 2</p>
+<h3 id="182-authentifizierung">1.8.2	Authentifizierung</h3>
+<p>Nicht relevant.</p>
+<h3 id="183-autorisierung-benutzergruppenrollenrechte">1.8.3	Autorisierung: Benutzergruppen/Rollen/Rechte</h3>
+<p>Nicht relevant. </p>
+<h3 id="184-verschlüsselung">1.8.4	Verschlüsselung</h3>
+<p>Die Applikation benutzt und speichert keine Daten. Sämtliche Kommunikation ist verschlüsselt.</p>
+<h3 id="185-signierung">1.8.5	Signierung</h3>
+<p>Nicht relevant. </p>
+<h2 id="19-anforderungen-an-die-datenmodellierung">1.9	Anforderungen an die Datenmodellierung</h2>
+<h3 id="191-mandantenfähigkeit">1.9.1 Mandantenfähigkeit</h3>
+<p>Nicht relevant.</p>
+<h3 id="192-historisierung">1.9.2 Historisierung</h3>
+<p>Nicht relevant. </p>
+<h3 id="193-stichtagsfähigkeit">1.9.3 Stichtagsfähigkeit</h3>
+<p>Nicht relevant.</p>
+<h1 id="2-allgemeine-übersicht">2 Allgemeine Übersicht</h1>
+<h2 id="21-funtionale-beschreibung">2.1 Funtionale Beschreibung</h2>
+<p>Der Rechner „Klimafreundliches Bauen“ ist ein Internet-Web-Rechner, welcher auf Basis der eingegeben Kredithöhe und Auswahl des Verwendungszweckes und Produktprogramms Kreditparameter (Zins, Laufzeit &amp; Freijahre), Tilgungsplan sowie Vergleichzins eines potenziellen Kredits anzeigt.</p>
+<p>Der Rechners zeigt dem Nutzer somit an, wie hoch die monatliche Belastung und wie hoch der finanzielle Vorteil aus den Förderprodukten sind.</p>
+<h2 id="22-integration-der-applikation-in-die-systemlandschaft-der-kfw">2.2 Integration der Applikation in die Systemlandschaft der KfW</h2>
+<p>Die Applikation wird als iFrame Overlay auf der Produktdetailseite kfw.de/297 eingebunden.
+Die eigenständige URL des iframes lautet: foerderservices.kfw.de/297-298</p>
+<p><img src="./../Dokumentation/img/KFN_2.2_Screenshot_Overlay.png" alt="KFN_2.2_Screenshot_Overlay"></p>
+<h1 id="3-rahmenablauf-der-applikation">3 Rahmenablauf der Applikation</h1>
+<p>Der Nutzer ruft über die KfW.de-Homepage den KFN-Online-Rechner auf und gibt in der dem Programm entsprechenden Oberfläche alle relevanten und notwendigen Details der geplanten Produktart Kredit ein (Kapitel 4.1).
+Die zur Auswahl stehenden Produktvarianten werden von der internen und externen Produkt API bezogen (siehe Kapitel 4.3)
+Die Benutzereingaben und weitere programmspezifischen Daten werden an den REST Webservice „Tilgungsrechner“ weitergegeben (Kapitel 4.2). </p>
+<h1 id="4-funktionales-design">4 Funktionales Design</h1>
+<p>In folgenden Unterkapiteln wird das Funktionale Design aus der Nutzer/Frontend-Perspektive beschrieben.
+Die technologische Beschreibung der verwendeten Komponenten findet im Kapitel 5 statt.</p>
+<h2 id="41-interaktionsschicht">4.1 Interaktionsschicht</h2>
+<p><strong>Maskenfolge</strong></p>
+<p><a id="tab8"></a></p>
+<table>
+<thead>
+<tr>
+<th align="center">Screennr</th>
+<th align="left">Screenname</th>
+<th align="left">Kapitel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="left">Sektion "Angaben zum Wohngebäude"</td>
+<td align="left">4.1.1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">Sektion "Angaben zum Kredit"</td>
+<td align="left">4.1.2</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">Sektion "Vergleich zur Hausbank"</td>
+<td align="left">4.1.3</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">Sektion "Ergebnis - Ihre Angaben"</td>
+<td align="left">4.1.4</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="left">Sektion "Ergebnis - Ihr KFW-Kredit"</td>
+<td align="left">4.1.5</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="left">Sektion "Ergebnis - Tabellarischer Tilgungsplan"</td>
+<td align="left">4.1.6</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="left">Sektion "Ergebnis - Vergleich zur Hausbank"</td>
+<td align="left">4.1.7</td>
+</tr>
+</tbody></table>
+<p>Tabelle 8: Überblick über den Bildschirmablauf</p>
+<p>Hinweis: Die Screenshots sind exemplarischer Natur und können von Kreditprogramm zu Kreditprogramm abweichen. So können angezeigte Auswahlmöglichkeiten oder Labels je nach Programm verschieden sein. Die Screenshots sollen lediglich das Look &amp; Feel der Screensektion zeigen.</p>
+<h3 id="411-sektion-angaben-zum-wohngebäude">4.1.1 Sektion "Angaben zum Wohngebäude"</h3>
+<h4 id="4111-layout">4.1.1.1 Layout</h4>
+<p><a id="abb3"> </a></p>
+<p><img src="./../Dokumentation/img/KFN_Sektion_4.1.1.png" alt="KFN_Sektion.4.1.1"></p>
+<p>Abbildung 3: Layout - Sektion "Angaben zum Wohngebäude"</p>
+<h4 id="4112-eingabe-elemente">4.1.1.2 Eingabe Elemente</h4>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Name des Attributs</th>
+<th align="left">Geschäftsobjekt Attribut</th>
+<th align="left">Beschreibung</th>
+<th>Art des Inputs</th>
+<th>Vorbelegung</th>
+<th>Validierung</th>
+<th>Quelle Validierung</th>
+<th>Pflichtfeld?</th>
+<th>Kommentar</th>
+<th>Anzeigereihenfolge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.1</td>
+<td>Nutzungsart</td>
+<td align="left">productnumber</td>
+<td align="left">-</td>
+<td>Radio</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>ja</td>
+<td>297 = private Selbstnutzung, 298 = Vermietung</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>Förderstufe</td>
+<td align="left">purpose</td>
+<td align="left">-</td>
+<td>Radio</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>ja</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>Anzahl Wohneinheiten</td>
+<td align="left">residentialUnits</td>
+<td align="left">-</td>
+<td>Freifeld</td>
+<td>keine</td>
+<td>bei 297 max 2</td>
+<td>-</td>
+<td>ja</td>
+<td></td>
+<td>2</td>
+</tr>
+</tbody></table>
+<p>Tabelle 11: Eingabeelemente - Sektion "Angaben zum Wohngebäude"</p>
+<h4 id="4113-angezeigte-elemente">4.1.1.3 Angezeigte Elemente</h4>
+<p><a id="tab9"></a></p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Quelle Inhalt</th>
+<th>Sektion</th>
+<th>Statisch / Dynamisch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Titel, Untertitel, Text</td>
+<td>kfnLabelService.ts</td>
+<td>Wohngebaeude</td>
+<td>Statisch</td>
+</tr>
+</tbody></table>
+<p>Tabelle 9: Angezeigte Elemente - Sektion "Angaben zum Wohngebäude"</p>
+<h3 id="412-sektion-angaben-zum-kredit">4.1.2 Sektion "Angaben zum Kredit"</h3>
+<h4 id="4121-layout">4.1.2.1 Layout</h4>
+<p>Layout Auswahl - Annuitätsdarlehen</p>
+<p><a id="abb3"> </a></p>
+<p><img src="./../Dokumentation/img/KFN_Sektion_4.1.2.1.png" alt="KFN_Sektion.4.1.2.1"></p>
+<p>Abbildung 3: Layout - Sektion "Angaben zum Kredit - Annuitätsdarlehen"</p>
+<p>Layout Auswahl - Endfälliges Darlehen</p>
+<p><a id="abb3"> </a></p>
+<p><img src="./../Dokumentation/img/KFN_Sektion_4.1.2.2.png" alt="KFN_Sektion.4.1.2.2"></p>
+<p>Abbildung 3: Layout - Sektion "Angaben zum Kredit - Endfälliges Darlehen"</p>
+<h4 id="4122-eingabe-elemente">4.1.2.2 Eingabe Elemente</h4>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Name des Attributs</th>
+<th align="left">Geschäftsobjekt Attribut</th>
+<th>Art des Inputs</th>
+<th>Vorbelegung</th>
+<th>Validierung</th>
+<th>Quelle Validierung</th>
+<th>Pflichtfeld?</th>
+<th>Kommentar</th>
+<th>Anzeigereihenfolge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2.1</td>
+<td>Kreditbetrag</td>
+<td align="left">max amount limit</td>
+<td>Freifeld</td>
+<td>keine</td>
+<td>maximal Anzahl WE x 100k€ (150k€) ohne QNG (mit QNG)</td>
+<td>kfnLabelService.ts</td>
+<td>Ja</td>
+<td>-</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>Kreditart</td>
+<td align="left">repaymentMethod</td>
+<td>Radio</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>Ja</td>
+<td>-</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>Laufzeit in Jahren</td>
+<td align="left">loanTerm</td>
+<td>Auswahl</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>Ja</td>
+<td>-</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>Tilgungsfreie Anlaufzeit</td>
+<td align="left">gracePeriod</td>
+<td>Auswahl</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>Ja</td>
+<td>nur bei Kreditart = monatlich</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>Zinsbindung</td>
+<td align="left">fixedInterestRatePeriod</td>
+<td>Radio</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>Ja</td>
+<td>nur bei Kreditart = monatlich</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td>KfW-Sollzins</td>
+<td align="left">ekn-interest-nominal</td>
+<td>Freifeld</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>Ja</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>2.7</td>
+<td>Flag_Sollzins</td>
+<td align="left">chosenInterestRate</td>
+<td>Radio</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>Ja</td>
+<td>Eingabe eigener Sollzins</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2.8</td>
+<td>Sollzins in %</td>
+<td align="left">chosenInterestRateAmount</td>
+<td>Freifeld</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>Ja</td>
+<td>nur bei Flag_Sollzins = ja</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<p>Tabelle 11: Eingabeelemente - Sektion "Angaben zum Kredit"</p>
+<h4 id="4123-angezeigte-elemente">4.1.2.3 Angezeigte Elemente</h4>
+<p><a id="tab10"></a></p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Quelle Inhalt</th>
+<th>Sektion / Wert</th>
+<th>Statisch / Dynamisch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Titel, Untertitel, Text</td>
+<td>kfnLabelService.ts</td>
+<td>-</td>
+<td>Statisch</td>
+</tr>
+<tr>
+<td>Laufzeit in Jahren</td>
+<td>interne Produkt-API, Kapitel 4.4</td>
+<td>loanTermMin(Max)</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Tilgungsfreie Anlaufzeit</td>
+<td>interne Produkt-API, Kapitel 4.4</td>
+<td>gracePeriod(Max)</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Zinsbindung</td>
+<td>interne Produkt-API, Kapitel 4.4</td>
+<td>fixedInterestRatePeriod</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>KfW-Sollzins</td>
+<td>externe Produkt-API, Kapitel 4.4</td>
+<td>ekn-interest-nominal</td>
+<td>dynamisch</td>
+</tr>
+</tbody></table>
+<p>Tabelle 10: Angezeigte Elemente - Sektion "Angaben zum Kredit"</p>
+<h3 id="413-sektion-vergleich-zur-hausbank">4.1.3 Sektion "Vergleich zur Hausbank"</h3>
+<h4 id="4131-layout">4.1.3.1 Layout</h4>
+<p><a id="abb3"> </a></p>
+<p><img src="./../Dokumentation/img/KFN_Sektion_4.1.3.png" alt="KFN_Sektion.4.1.3"></p>
+<p>Abbildung 3: Layout - Sektion "Vergleich zur Hausbank"</p>
+<h4 id="4132-eingabe-elemente">4.1.3.2 Eingabe Elemente</h4>
+<table>
+<thead>
+<tr>
+<th>Nummer</th>
+<th>Name des Attributs</th>
+<th align="left">Geschäftsobjekt Attribut</th>
+<th>Art des Inputs</th>
+<th>Vorbelegung</th>
+<th>Validierung</th>
+<th>Quelle Validierung</th>
+<th>Pflichtfeld?</th>
+<th>Kommentar</th>
+<th>Anzeigereihenfolge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.1</td>
+<td>Flag_Vergleich</td>
+<td align="left">-</td>
+<td>Radio</td>
+<td>keine</td>
+<td></td>
+<td></td>
+<td>Ja</td>
+<td>-</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>Vergleichszins</td>
+<td align="left">-</td>
+<td>Freifeld</td>
+<td>keine</td>
+<td></td>
+<td>-</td>
+<td>Ja</td>
+<td>-</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>Tabelle 11: Eingabeelemente - Sektion "Vergleich zur Hausbank"</p>
+<h4 id="4133-angezeigte-elemente">4.1.3.3 Angezeigte Elemente</h4>
+<p><a id="tab11"></a></p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Quelle Inhalt</th>
+<th>Sektion</th>
+<th>Statisch / Dynamisch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Titel, Untertitel, Text</td>
+<td>kfnLabelService.ts</td>
+<td>Kredit</td>
+<td>Statisch</td>
+</tr>
+</tbody></table>
+<p>Tabelle 11: Angezeigte Elemente - Sektion "Vergleich zur Hausbank"</p>
+<h3 id="414-sektion-ergebnis---ihre-angaben">4.1.4 Sektion "Ergebnis - Ihre Angaben"</h3>
+<h4 id="4141-layout">4.1.4.1 Layout</h4>
+<p><a id="abb3"> </a></p>
+<p><img src="./../Dokumentation/img/KFN_Sektion_4.1.4.png" alt="KFN_Sektion.4.1.4"></p>
+<p>Abbildung 3: Layout - Sektion "Ergebnis - Ihre Angaben"</p>
+<h4 id="4142-eingabe-elemente">4.1.4.2 Eingabe Elemente</h4>
+<table>
+<thead>
+<tr>
+<th>Nummer</th>
+<th>Name des Attributs</th>
+<th align="left">Geschäftsobjekt Attribut</th>
+<th>Art des Inputs</th>
+<th>Vorbelegung</th>
+<th>Validierung</th>
+<th>Quelle Validierung</th>
+<th>Pflichtfeld?</th>
+<th>Kommentar</th>
+<th>Anzeigereihenfolge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keine</td>
+<td></td>
+<td align="left"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Tabelle 11: Eingabeelemente - Sektion "Ergebnis - Ihre Angaben"</p>
+<h4 id="4143-angezeigte-elemente">4.1.4.3 Angezeigte Elemente</h4>
+<p><a id="tab12"></a></p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Quelle Inhalt</th>
+<th>Sektion</th>
+<th>Statisch / Dynamisch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Titel, Untertitel, Text</td>
+<td>kfnLabelService.ts</td>
+<td>-</td>
+<td>Statisch</td>
+</tr>
+<tr>
+<td>Nutzungsart</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.1</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Förderstufe</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.1</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Geförderte Wohneinheiten</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Kreditbetrag</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Kreditart</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Laufzeit in Jahren</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Tilgungsfreie Anlaufzeit</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Zinsbindung</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Sollzins in %</td>
+<td>bei Auswahl "KfW-Zins" ekn-interest-nominal, bei "eigenem Zins" der in  2.8 gewählte Wert</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Vergleichszins</td>
+<td>erscheint nur bei Auswahl  "Vergleich zur Hausbank" ja - Entsprechend Eingabe aus Kapitel 4.1.3 Wert 3.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Tabelle 12: Angezeigte Elemente - Sektion "Ergebnis - Ihre Angaben"</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="415-sektion-ergebnis---ihr-kfw-kredit">4.1.5 Sektion "Ergebnis - Ihr KFW-Kredit"</h3>
+<h4 id="4151-layout">4.1.5.1 Layout</h4>
+<p><a id="abb3"> </a></p>
+<p><img src="./../Dokumentation/img/KFN_Sektion_4.1.5.png" alt="KFN_Sektion.4.1.5"></p>
+<p>Abbildung 3: Layout - Sektion "Ergebnis - Ihr KFW-Kredit"</p>
+<h4 id="4152-eingabe-elemente">4.1.5.2 Eingabe Elemente</h4>
+<table>
+<thead>
+<tr>
+<th>Nummer</th>
+<th>Name des Attributs</th>
+<th align="left">Geschäftsobjekt Attribut</th>
+<th>Art des Inputs</th>
+<th>Vorbelegung</th>
+<th>Validierung</th>
+<th>Quelle Validierung</th>
+<th>Pflichtfeld?</th>
+<th>Kommentar</th>
+<th>Anzeigereihenfolge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keine</td>
+<td></td>
+<td align="left"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Tabelle 11: Eingabeelemente - Sektion "Ergebnis - Ihr KFW-Kredit"</p>
+<h4 id="4153-angezeigte-elemente">4.1.5.3 Angezeigte Elemente</h4>
+<p><a id="tab13"></a></p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Quelle Inhalt</th>
+<th>Sektion</th>
+<th>Statisch / Dynamisch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Titel, Untertitel, Text</td>
+<td>kfnLabelService.ts</td>
+<td>-</td>
+<td>Statisch</td>
+</tr>
+<tr>
+<td>Kreditbetrag</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Tilgungsfreie Anlaufzeit</td>
+<td>Berechnung: {akt. Monat}{akt. Jahr} - {akt.Monat - 1 Monat}{akt. Jahr + "Wert Tilgungsfreie Jahre"}</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Monatliche Rate (tilgungsfreie Zeit)</td>
+<td>Tilgungsrechner REST Response Array: repaymentPlan.repayments[0].amount</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Monatliche Rate (ab Tilgungsbeginn)</td>
+<td>Tilgungsrechner REST Response Array: erste Amount suchen der &lt;&gt; repaymentPlan.repayments[0].amount</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Effektiver Jahreszins</td>
+<td>Tilgungsrechner REST Response: interestRate</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Anfänglicher Tilgungssatz</td>
+<td>Tilgungsrechner REST Reponse: initialRepaymentRate</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Zinsbindung</td>
+<td>Entsprechend Eingabe aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Restschuld</td>
+<td>Kreditbetrag - Getilgter Betrag</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Getilgter Betrag</td>
+<td>Tilgungsrechner REST Response Array: Summe aller repaymentPlan.repayments[0].amount</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Geleistete Zinszahlungen</td>
+<td>Tilgungsrechner REST Response: totalInterestCost</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+</tbody></table>
+<p>Tabelle 13: Angezeigte Elemente - Sektion "Ergebnis - Ihre Angaben"</p>
+<h3 id="416-sektion-ergebnis---tabellarischer-tilgungsplan">4.1.6 Sektion "Ergebnis - Tabellarischer Tilgungsplan"</h3>
+<h4 id="4161-layout">4.1.6.1 Layout</h4>
+<p><a id="abb3"> </a></p>
+<p><img src="./../Dokumentation/img/KFN_Sektion_4.1.6.png" alt="KFN_Sektion.4.1.6"></p>
+<p>Abbildung 3: Layout - Sektion "Ergebnis - Tabellarischer Tilgungsplan"</p>
+<h4 id="4162-eingabe-elemente">4.1.6.2 Eingabe Elemente</h4>
+<table>
+<thead>
+<tr>
+<th>Nummer</th>
+<th>Name des Attributs</th>
+<th align="left">Geschäftsobjekt Attribut</th>
+<th>Art des Inputs</th>
+<th>Vorbelegung</th>
+<th>Validierung</th>
+<th>Quelle Validierung</th>
+<th>Pflichtfeld?</th>
+<th>Kommentar</th>
+<th>Anzeigereihenfolge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keine</td>
+<td></td>
+<td align="left"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Tabelle 11: Eingabeelemente - Sektion "Ergebnis - Tabellarischer Tilgungsplan"</p>
+<h4 id="4163-angezeigte-elemente">4.1.6.3 Angezeigte Elemente</h4>
+<p><a id="tab14"></a></p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Quelle Inhalt</th>
+<th>Sektion</th>
+<th>Statisch / Dynamisch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Titel, Untertitel, Text</td>
+<td>kfnLabelService.ts</td>
+<td>-</td>
+<td>Statisch</td>
+</tr>
+<tr>
+<td>Zeitraum</td>
+<td>Tilgungsrechner REST Response: date</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Rate</td>
+<td>Tilgungsrechner REST Response: amount</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Zinsanteil</td>
+<td>Tilgungsrechner REST Response: interestRateAmount</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Tilgung</td>
+<td>Tilgungsrechner REST Response: repaymentAmount</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Restschuld</td>
+<td>Tilgungsrechner REST Response: balance</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+</tbody></table>
+<p>Tabelle 14: Angezeigte Elemente - Sektion "Ergebnis - Tabellarischer Tilgungsplan"</p>
+<h3 id="417-sektion-ergebnis---vergleich-zur-hausbank">4.1.7 Sektion "Ergebnis - Vergleich zur Hausbank"</h3>
+<h4 id="4171-layout">4.1.7.1 Layout</h4>
+<p><a id="abb3"> </a></p>
+<p><img src="./../Dokumentation/img/KFN_Sektion_4.1.7.png" alt="KFN_Sektion.4.1.7"></p>
+<p>Abbildung 3: Layout - Sektion "Ergebnis - Vergleich zur Hausbank"</p>
+<h4 id="4172-eingabe-elemente">4.1.7.2 Eingabe Elemente</h4>
+<table>
+<thead>
+<tr>
+<th>Nummer</th>
+<th>Name des Attributs</th>
+<th align="left">Geschäftsobjekt Attribut</th>
+<th>Art des Inputs</th>
+<th>Vorbelegung</th>
+<th>Validierung</th>
+<th>Quelle Validierung</th>
+<th>Pflichtfeld?</th>
+<th>Kommentar</th>
+<th>Anzeigereihenfolge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keine</td>
+<td></td>
+<td align="left"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Tabelle 11: Eingabeelemente - Sektion "Ergebnis - Vergleich zur Hausbank"</p>
+<h4 id="4173-angezeigte-elemente">4.1.7.3 Angezeigte Elemente</h4>
+<p><a id="tab15"></a></p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Quelle Inhalt</th>
+<th>Sektion</th>
+<th>Statisch / Dynamisch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Titel, Untertitel, Text</td>
+<td>kfnLabelService.ts</td>
+<td>-</td>
+<td>Statisch</td>
+</tr>
+<tr>
+<td>Gesamtersparnis</td>
+<td>Tilgungsrechner REST SST Kap 4.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Sollzins p.a. (KfW-Kredit)</td>
+<td>Wert aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Sollzins p.a. (Kredit der Hausbank)</td>
+<td>Wert aus Kapitel 4.1.3</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Effektiver Jahreszins (KfW-Kredit)</td>
+<td>Tilgungsrechner REST Response 1: interestRate</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Effektiver Jahreszins (Kredit der Hausbank)</td>
+<td>Tilgungsrechner REST Response 2: interestRate</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Tilgungsfreie Anlaufzeit Jahre (KfW-Kredit)</td>
+<td>Wert aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Tilgungsfreie Anlaufzeit (Kredit der Hausbank)</td>
+<td>Wert aus Kapitel 4.1.2 (identisch)</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Anfänglicher Tilgungssatz (KfW-Kredit)</td>
+<td>Tilgungsrechner REST SST Kap 4.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Anfänglicher Tilgungssatz (Kredit der Hausbank)</td>
+<td>Tilgungsrechner REST SST Kap 42</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Restschuld nach Zinsbindungsende (KfW-Kredit)</td>
+<td>Tilgungsrechner REST Response 1: Kreditbetrag - getilgter Betrag</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Restschuld nach Zinsbindungsende (Kredit der Hausbank)</td>
+<td>Tilgungsrechner REST Response 2: Kreditbetrag - getilgter Betrag</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Verwendete Zinsbindung (KfW-Kredit)</td>
+<td>Wert aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+<tr>
+<td>Verwendete Zinsbindung (Kredit der Hausbank)</td>
+<td>Wert aus Kapitel 4.1.2</td>
+<td>-</td>
+<td>dynamisch</td>
+</tr>
+</tbody></table>
+<p>Tabelle 15: Angezeigte Elemente - Sektion "Ergebnis - Vorteilsrechner"</p>
+<h3 id="418-berechnung-ergebnisausgabe">4.1.8 Berechnung Ergebnisausgabe</h3>
+<p>Für die Ergebnisausgabe in den Sektionen 4.1.4 bis 4.1.7 wird der Tilgungsrechner FS angesprochen.</p>
+<p>Folgender Input wird von der Schnittstelle erwartet (InputRequestParametersDTO.java):</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Parameter Name</th>
+<th>Bedeutung</th>
+<th>Überlieferter Wert</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private BigDecimal</td>
+<td>loanAmount</td>
+<td>Kreditbetrag</td>
+<td>2.1 Kreditbetrag</td>
+</tr>
+<tr>
+<td>private Date</td>
+<td>disbursementDate</td>
+<td>Auszahlungsdatum</td>
+<td>Aktuelles Datum (der FS arbeitet dann mit dem nächsten Monat)</td>
+</tr>
+<tr>
+<td>private Date</td>
+<td>firstRepaymentDate</td>
+<td>Datum erster Tilgungszahlung</td>
+<td>Aktuelles Datum + 2.4 Tilgungsfreie Anlaufzeit + 1 Monat</td>
+</tr>
+<tr>
+<td>private Date</td>
+<td>firstInterestRateDate</td>
+<td>Datum erster Zinstermin</td>
+<td>= disbursementDate</td>
+</tr>
+<tr>
+<td>private Date</td>
+<td>endDateOfFixedInterestRatePeriod</td>
+<td>Datum Zinsbindungsende</td>
+<td>Aktuelles Datum + 2.5 Zinsbindung + 1 Monat</td>
+</tr>
+<tr>
+<td>private Date</td>
+<td>endDateOfLoanCall</td>
+<td>Datum Laufzeitende</td>
+<td>Aktuelles Datum + 2.3 Laufzeit + 1 Monat</td>
+</tr>
+<tr>
+<td>private int</td>
+<td>repaymentProcess</td>
+<td>Tilgungsverfahren (Schluessel 1522)</td>
+<td>wenn Laufzeit == Tilgungsfreie Anlaufzeit -&gt; 1 = endfällig sonst 2 annuitätisch</td>
+</tr>
+<tr>
+<td>private int</td>
+<td>interestRateDueDateCycle</td>
+<td>Faelligskeitsturnus (Schluessel 76)</td>
+<td>4 (monatlich)</td>
+</tr>
+<tr>
+<td>private List<interestratevalues></interestratevalues></td>
+<td>interestRates</td>
+<td>Wiederholungsgruppe Zins ({validFrom; interestRateValue})</td>
+<td>{firstInterestRateDate; gemäß Produktconfig "ekn-interest-nominal" }</td>
+</tr>
+<tr>
+<td>private Integer</td>
+<td>repaymentGrantCalculationType</td>
+<td>Tilgungszuschuss Typ Berechnung</td>
+<td>= 1 (dummywert, da kein Zuschuss)</td>
+</tr>
+<tr>
+<td>private List<repaymentgrantvalues></repaymentgrantvalues></td>
+<td>repaymetGrants</td>
+<td>Wiederholungsgruppe Tilgungszuschüsse</td>
+<td>dummywerte, da kein Zuschuss</td>
+</tr>
+</tbody></table>
+<p>Folgender Output wird geliefert (InterestRateAndRepaymentScheduleDTO.java):</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Parameter Name</th>
+<th>Bedeutung</th>
+<th>Mapping</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private BigDecimal</td>
+<td>interestRate</td>
+<td>Effektivzins</td>
+<td>4.1.5 Sektion "Ergebnis - Ihr KFW-Kredit"</td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>initialRepaymentRate</td>
+<td>anfaenglicher Tilgungssatz</td>
+<td>4.1.5 Sektion "Ergebnis - Ihr KFW-Kredit"</td>
+</tr>
+<tr>
+<td>private RepaymentRate</td>
+<td>percentageRate</td>
+<td>anfaenglicher Tilgungssatz pro Jahr</td>
+<td></td>
+</tr>
+<tr>
+<td>private Date</td>
+<td>firstRepayment;</td>
+<td>Datum erster Tilgungszahlung</td>
+<td>4.1.6 Sektion "Ergebnis - Tabellarischer Tilgungsplan"</td>
+</tr>
+<tr>
+<td>private Date</td>
+<td>lastRepayment;</td>
+<td>Datum letzte Tilgungszahlung (Laufzeitende)</td>
+<td></td>
+</tr>
+<tr>
+<td>private Integer</td>
+<td>numberOfRepayments;</td>
+<td>Anzahl an Zahlungen</td>
+<td></td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>totalLoanCost;</td>
+<td>Gesamtbetrag (Zins+Tilgung)</td>
+<td></td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>totalRepaymentCost</td>
+<td>Summe Tilgungen</td>
+<td>4.1.5 Sektion "Ergebnis - Ihr KFW-Kredit"</td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>totalExtraRepaymentCost</td>
+<td>Summe Sondertilgungen</td>
+<td></td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>totalInterestCost</td>
+<td>Summe Zinsen</td>
+<td>4.1.5 Sektion "Ergebnis - Ihr KFW-Kredit"</td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>lastAnnuity</td>
+<td>Letzte Rate</td>
+<td></td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>lastRepaymentPercentage</td>
+<td>Letzter Tilgungssatz</td>
+<td></td>
+</tr>
+<tr>
+<td>private List<repaymentdata></repaymentdata></td>
+<td>repayments</td>
+<td>Array der Zahlungen</td>
+<td>4.1.6 Sektion "Ergebnis - Tabellarischer Tilgungsplan"</td>
+</tr>
+</tbody></table>
+<p>RepaymentData (Array der Zahlungen)</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Parameter Name</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private Date</td>
+<td>firstRepayment;</td>
+<td>Datum der Zahlung</td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>amount;</td>
+<td>Gesamtzahlung</td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>balance;</td>
+<td>Restschuld</td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>repaymentAmount;</td>
+<td>Tilgung</td>
+</tr>
+<tr>
+<td>private BigDecimal</td>
+<td>interestRateAmount;</td>
+<td>Zins</td>
+</tr>
+</tbody></table>
+<h3 id="419-produkt--und-zinskonditionen">4.1.9 Produkt- und Zinskonditionen</h3>
+<p>Für die Anzeige in 4.1.2 Sektion "Angaben zum Kredit" werden die Produkt- und Zinskonditionen von der internen und externe Produkt API bezogen.</p>
+<p>Als mögliche Produktvariante gilt hierbei das Datenset aus Kreditart, Laufzeit, Tilgungsfreie Anlaufzeit, Zinsbindung. Zu jeder Produktvariante gibt es einen entsprechenden nominal und Effektivzins.
+Die Produktvarianten werden aus der internen Produkt API bezogen, der zu der Produktvariante gehörige Zinssatz aus der externen Produkt API.</p>
+<p>Weitere Informationen zu den Produkt APIs sind in Kapitel 6.1</p>
+<p>Iterative Einschränkung via Auswahl</p>
+<table>
+<thead>
+<tr>
+<th>Nr Attribut</th>
+<th>Attribut</th>
+<th>Logik</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2.2</td>
+<td>Kreditart</td>
+<td>repaymentMethod (1=endfällig,2=annuitätisch)</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>Laufzeit</td>
+<td>kompletter verfügbarer Bereich (Minimum von allen LoanTermMin und Maximum über alle LoanTermMax)</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>Tilgungsfreie Anlaufjahre</td>
+<td>entsprechend über die Laufzeit eingeschränkte Auswahl an Tilgungsfreien Anlaufjahren</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>Zinsbindung</td>
+<td>entsprechend der durch die 3 vorherigen Attribute eingeschränkten nun eindeutigen Produktvariante</td>
+</tr>
+</tbody></table>
+<h3 id="4110-aufruf-auf-kfwde">4.1.10 Aufruf auf kfw.de</h3>
+<p>Die Anwendung wird als Overlay auf kfw.de dargestellt (siehe Screenshot Kapitel 2.2)
+Dafür wird die Anwendung als iframe wiefolgt aufgerufen:</p>
+<pre><code>&lt;iframe
+        src="https://foerderservices.kfw.de/rechner/297-298"
+        style="min-width: 100%; height: 70vh;"
+      /&gt;
+      `
+</code></pre>
+<h1 id="5-fremd--und-standardsoftwarekomponenten">5 Fremd- und Standardsoftwarekomponenten</h1>
+<h2 id="51--customizing">5.1 	Customizing</h2>
+<p>Nicht relevant</p>
+<h2 id="52-fehlerhandling">5.2	Fehlerhandling</h2>
+<p>Nicht relevant</p>
+<h2 id="53-komponentensicht-frontend">5.3	Komponentensicht: Frontend</h2>
+<h3 id="531-enthaltene-komponenten">5.3.1 Enthaltene Komponenten</h3>
+<p>Die folgende Komponenten sind Teil des Moduls:</p>
+<p><a id="tab16"></a></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th align="left">Verantwortlich</th>
+<th align="center">Intern¹</th>
+<th align="left">Referenz</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Azure Application Gateway</td>
+<td align="left">Application Gateway stellt dem Nutzer das Frontend bereit</td>
+<td align="center">Nein</td>
+<td align="left"><a href="https://azure.microsoft.com/en-us/products/application-gateway/#overview">Azure Application Gateway webpage</a></td>
+</tr>
+<tr>
+<td>Webpage Content</td>
+<td align="left">Die Webseite besteht aus HTML und Javascript (inklusiv relevante Frameworks) Datein und andere statische Inhalte</td>
+<td align="center">Ja</td>
+<td align="left"><a href="https://dev.azure.com/3adev/Meine-KfW/_git/Meine-KfW?path=/app/frontend">frontend code</a></td>
+</tr>
+<tr>
+<td>React</td>
+<td align="left">Javascript UI Framework ist für die Erstellung von dynamischen Webseiten relevant</td>
+<td align="center">Nein</td>
+<td align="left"><a href="https://reactjs.org/">React webpage</a></td>
+</tr>
+<tr>
+<td>MaterialUI</td>
+<td align="left">Javascript Frontend rendert Framework für React</td>
+<td align="center">Nein</td>
+<td align="left"><a href="https://material-ui.com/">Material UI webpage</a></td>
+</tr>
+<tr>
+<td>final-form</td>
+<td align="left">Javascript Framework für die Verwaltung des Formularstatus</td>
+<td align="center">Nein</td>
+<td align="left"><a href="https://github.com/final-form/final-form">Final Form webpage</a></td>
+</tr>
+<tr>
+<td>axios</td>
+<td align="left">Javascript Framework für die HTTP Kommunikation</td>
+<td align="center">No</td>
+<td align="left"><a href="https://github.com/axios/axios">Axios webpage</a></td>
+</tr>
+</tbody></table>
+<p>Tabelle 16: Enthaltene Komponente im Frontend</p>
+<p>*: zeigt an welche Komponente öffentlich/intern verfügbar ist</p>
+<h3 id="532-ressourcen">5.3.2 Ressourcen</h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>TYPE</th>
+<th>RESOURCE GROUP</th>
+<th>CREATEDBY (TAG)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Application Insights Smart Detection</td>
+<td>Action group</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>as-kfnrechner-test-001</td>
+<td>App Service</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>plan-kfnr-test-001</td>
+<td>App Service plan</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>agw-kfnrechner-test</td>
+<td>Application gateway</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>waf-kfnrechner-test</td>
+<td>Application Gateway WAF policy</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>appi-kfnrechner-test</td>
+<td>Application Insights</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>tilgungsrechner-wbs.test.3adev.net</td>
+<td>DNS zone</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>kv-kfnrechner-test</td>
+<td>Key vault</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>log-kfnr-test</td>
+<td>Log Analytics workspace</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>id-kfnrechner-test-agw-kv</td>
+<td>Managed Identity</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>id-kfnrechner-test-st-kv</td>
+<td>Managed Identity</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>id-kfnrechner-test-webapp-001</td>
+<td>Managed Identity</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>pe-kfn-test-001.nic.080169ba-026d-4005-a1ea-cc926829a7ae</td>
+<td>Network Interface</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>pe-kfn-test-002.nic.0e0d836b-1084-4cc3-a6b5-3fe2f13d7bf8</td>
+<td>Network Interface</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>pe-kfn-test-003.nic.3a353a3a-853a-4d0e-a53a-963874968e9e</td>
+<td>Network Interface</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>nsg-kfnrechner-test-backend-tier-endpoints</td>
+<td>Network security group</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>nsg-kfnrechner-test-front-tier</td>
+<td>Network security group</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>nsg-kfnrechner-test-middle-tier-endpoints</td>
+<td>Network security group</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>nsg-kfnrechner-test-middle-tier-server-farms</td>
+<td>Network security group</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>tilgungsrechner-wbs.test.azn.kfwbank.cloud</td>
+<td>Private DNS zone</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>pe-kfn-test-001</td>
+<td>Private endpoint</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>pe-kfn-test-002</td>
+<td>Private endpoint</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>pe-kfn-test-003</td>
+<td>Private endpoint</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>pip-kfnrechner-test</td>
+<td>Public IP address</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>rt-kfnrechner-test-front-tier</td>
+<td>Route table</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>rt-kfnrechner-test-spoke</td>
+<td>Route table</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>Failure Anomalies - appi-kfnrechner-test</td>
+<td>Smart detector alert rule</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>sakfwtrwbstest</td>
+<td>Storage account</td>
+<td>rg-kfnrechner-test</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>sakfwtrwbstestmgnt</td>
+<td>Storage account</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>stkfwtrwbstestmgnt</td>
+<td>Storage account</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>vnet-kfnrechner-test-spoke</td>
+<td>Virtual network</td>
+<td>rg-kfnrechner-test</td>
+<td></td>
+</tr>
+<tr>
+<td>flow-log-nsg-kfnrechner-test-backend-tier-endpoints</td>
+<td>Flow log</td>
+<td>networkwatcherrg</td>
+<td></td>
+</tr>
+<tr>
+<td>flow-log-nsg-kfnrechner-test-front-tier</td>
+<td>Flow log</td>
+<td>networkwatcherrg</td>
+<td></td>
+</tr>
+<tr>
+<td>flow-log-nsg-kfnrechner-test-middle-tier-endpoints</td>
+<td>Flow log</td>
+<td>networkwatcherrg</td>
+<td></td>
+</tr>
+<tr>
+<td>flow-log-nsg-kfnrechner-test-middle-tier-server-farms</td>
+<td>Flow log</td>
+<td>networkwatcherrg</td>
+<td></td>
+</tr>
+<tr>
+<td>NetworkWatcher_westeurope</td>
+<td>Network Watcher</td>
+<td>networkwatcherrg</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="6-schnittstellenbeschreibung-und-anforderungen-an-andere-funktionen">6	Schnittstellenbeschreibung und Anforderungen an andere Funktionen</h1>
+<table>
+<thead>
+<tr>
+<th>Name der Schnittstelle</th>
+<th>In</th>
+<th>Out</th>
+<th>Zweck</th>
+<th>Referenz</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>interne Produkt API</td>
+<td>x</td>
+<td></td>
+<td>Produktkonditionen</td>
+<td>NICHT SCOPE DES MVPS - <a href="https://services-vsp.kfw.kfwgruppe.net/produktdefinition-rest/index.html">Swagger</a></td>
+</tr>
+<tr>
+<td>externe Produkt API</td>
+<td>x</td>
+<td></td>
+<td>Zinskonditionen</td>
+<td>NICHT SCOPE DES MVPS - <a href="https://public.kfw.de/produktdefinition-rest/index.html">Swagger</a></td>
+</tr>
+<tr>
+<td>Tilgungsrechner REST</td>
+<td>x</td>
+<td></td>
+<td>Tilgungsplan</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Schnittstellenübersicht
+<a id="tab15"> </a></p>
+<h2 id="61-schnittstelle-interne-produkt-api">6.1	Schnittstelle interne Produkt API</h2>
+<p>Für jedes Produkt werden die Produktkonditionen und Produktvarianten (verschiedene Kombinationen aus Laufzeit (loanTerm), Tilgungsfreie Jahre (GracePriod) und Kreditart (repaymentMethod)) ausgelesen.
+Die API ist hier zu finden <a href="https://services-vsp.kfw.kfwgruppe.net/produktdefinition-rest/index.html">https://services-vsp.kfw.kfwgruppe.net/produktdefinition-rest/index.html</a></p>
+<p>(Die API wird täglich durch eine Azure Function abgerufen- NICHT SCOPE DES MVPs, aktuell noch manuelle Ablage). Die Response wird in einem Blob-Storage abgelegt und dem Frontend zur Verfügung gestellt.</p>
+<p>Beispiel Response für Programm 297</p>
+<pre><code>{
+  "productnumber": 297,
+  "name": "KFN Wohngebäude - private Selbstnutzung",
+  "status": "open",
+  "max amount limit": 150000,
+  "purposes": [
+    {
+      "vsp code": 569,
+      "name": "Klimafreundliches Wohngebäude"
+    },
+    {
+      "vsp code": 570,
+      "name": "Klimafreundliches Wohngebäude QNG"
+    }
+  ],
+  "variants": [
+    {
+      "interestConditionId": 245096750432214,
+      "loanTermMin": 11,
+      "loanTermMax": 25,
+      "gracePeriodMin": 1,
+      "gracePeriodMax": 3,
+      "fixedInterestRatePeriod": 10,
+      "onLending": 1,
+      "investmentPlace": 3,
+      "fixedInterestRateType": 1,
+      "repaymentSchedule": 4,
+      "interestSchedule": 4,
+      "repaymentMethod": 2,
+      "stateAid": 3,
+      "commitmentCommission": 1.8,
+      "commissionFreeMonths": 12,
+      "unscheduledRepaymentPossibility": 3,
+      "disbursementRate": 100
+    },
+    {
+      "interestConditionId": 452808750432202,
+      "loanTermMin": 26,
+      "loanTermMax": 35,
+      "gracePeriodMin": 1,
+      "gracePeriodMax": 5,
+      "fixedInterestRatePeriod": 10,
+      "onLending": 1,
+      "investmentPlace": 3,
+      "fixedInterestRateType": 1,
+      "repaymentSchedule": 4,
+      "interestSchedule": 4,
+      "repaymentMethod": 2,
+      "stateAid": 3,
+      "commitmentCommission": 1.8,
+      "commissionFreeMonths": 12,
+      "unscheduledRepaymentPossibility": 3,
+      "disbursementRate": 100
+    },
+  ]
+}
+</code></pre>
+<p>Diese Abfrage wird für Programm 297 und 298 durchgeführt und in einem JSON vereint.</p>
+<h2 id="62-schnittstelle-externe-produkt-api">6.2	Schnittstelle externe Produkt API</h2>
+<p>Zu jeder Produktvariante werden die tagesaktuellsten Zinskonditionen ausgelesen. Der Identifier für den zu einer Produktvariante gehörigen Zinssatz ist die interestConditionId.
+Die API ist hier zu finden: <a href="https://public.kfw.de/produktdefinition-rest/index.html">https://public.kfw.de/produktdefinition-rest/index.html</a></p>
+<p>Beispiel Response für die Produktvariante (Laufzeit 26-35 Jahre, Tilgungsfreie Anlaufzeit 1-5, monatliche Rückzahlung) 452808750432202 für den 2023-10-26</p>
+<pre><code>{
+  "ekn-interest-nominal": 1.23,
+  "ekn-interest-effective": 1.24
+}
+</code></pre>
+<p>Für jede interestConditionId wird der entsprechende Zinsatz abgefragt und in einem JSON in der Reihenfolge der Abfrage vereint</p>
+<h2 id="63-tilgungsrechner-rest-schnittstelle">6.3	Tilgungsrechner REST Schnittstelle</h2>
+<p>Der Zinstilgplan zur Anzeige der Ergebnisse (Kapitel 4.1.4 - 4.1.7) wird von der Tilgungsrechner REST Schnittstelle bezogen. </p>
+<p>Responseformat:</p>
+<pre><code>export interface MainResultForm {
+activeStep: string;
+stepOneCompleted: boolean;
+stepTwoCompleted: boolean;
+stepThreeCompleted: boolean;
+resultProgram: string;
+resultFunding: string;
+resultResidentialUnits: number;
+resultCreditAmount: number;
+resultCreditType: 'Annuitätendarlehen' | 'Endfällig';
+resultDuration: string;
+resultFreeYears: string;
+resultFixedInterestRates: string;
+resultCreditProvider: string;
+resultInterestRates: string;
+resultInterestRatesAmount: number;
+resultCompare: string;
+resultCompareInterestRatesAmount: string;
+}
+</code></pre>
+<h1 id="7-jobkomplexe-und-batchesjobs">7	Jobkomplexe und Batches/Jobs</h1>
+<p>Nicht relevant.</p>
+<h1 id="8-applikationsbetrieb">8	Applikationsbetrieb</h1>
+<h2 id="81-konfiguration">8.1	Konfiguration</h2>
+<p>Alle Komponenten in der Cloud werden mit Terraform erstellt/konfiguriert. Die wenigen zusätzlichen Konfigurationen werden mit Bash und Powershell Scripts durchgeführt. 
+Für eine detaillierte Übersicht der Konfigurationsmöglichkeiten s. Terraform.</p>
+<p>KFN_INFRASTRUCTURE_DEV</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BLOB_CONTAINER_NAME</td>
+<td>st-con-kfnrechner-products</td>
+<td>-</td>
+</tr>
+<tr>
+<td>EXTERNAL_PRODUCT_API_URL</td>
+<td><a href="https://public-ent07.kfw.kfwgruppe.net/produktdefinition-rest/index.html">https://public-ent07.kfw.kfwgruppe.net/produktdefinition-rest/index.html</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>INTERNAL_PRODUCT_API_URL</td>
+<td><a href="https://kfw-f-vm3vspwas-le01.kfw.kfwgruppe.net:7443/produktdefinition-rest/index.html">https://kfw-f-vm3vspwas-le01.kfw.kfwgruppe.net:7443/produktdefinition-rest/index.html</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>STORAGE_ACCOUNT_ENDPOINT</td>
+<td><a href="https://sakfwtrwbsdev.blob.core.windows.net/">https://sakfwtrwbsdev.blob.core.windows.net/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>TILGUNGSRECHNER_API_URL</td>
+<td><a href="https://public.kfw.de">https://public.kfw.de</a></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>KFN_INFRASTRUCTURE_TEST</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BLOB_CONTAINER_NAME</td>
+<td>st-con-kfnrechner-products</td>
+<td>-</td>
+</tr>
+<tr>
+<td>EXTERNAL_PRODUCT_API_URL</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>INTERNAL_PRODUCT_API_URL</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>STORAGE_ACCOUNT_ENDPOINT</td>
+<td><a href="https://sakfwtrwbstest.blob.core.windows.net/">https://sakfwtrwbstest.blob.core.windows.net/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>TILGUNGSRECHNER_API_URL</td>
+<td><a href="https://public.kfw.de">https://public.kfw.de</a></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>KFN_INFRASTRUCTURE_PROD</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BLOB_CONTAINER_NAME</td>
+<td>st-con-kfnrechner-products</td>
+<td>-</td>
+</tr>
+<tr>
+<td>EXTERNAL_PRODUCT_API_URL</td>
+<td><a href="https://public.kfw.de/produktdefinition-rest/index.html">https://public.kfw.de/produktdefinition-rest/index.html</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>INTERNAL_PRODUCT_API_URL</td>
+<td><a href="https://services-vsp.kfw.kfwgruppe.net/produktdefinition-rest/index.html">https://services-vsp.kfw.kfwgruppe.net/produktdefinition-rest/index.html</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>STORAGE_ACCOUNT_ENDPOINT</td>
+<td><a href="https://sakfwtrwbstest.blob.core.windows.net/">https://sakfwtrwbstest.blob.core.windows.net/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>TILGUNGSRECHNER_API_URL</td>
+<td><a href="https://public.kfw.de">https://public.kfw.de</a></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>Konfiguration <bezeichnung komponente="">
+<a id="tab16"> </a></bezeichnung></p>
+<h2 id="82-configuration-items">8.2	Configuration Items</h2>
+<p>Nicht relevant, da alle Infrastruktur-Konfigurationen in Terraform vorgenommen werden.</p>
+<h2 id="83-deployment">8.3	Deployment</h2>
+<p>Die Deploymentanweisung <a href="https://kfw-f-dmswebp.kfw.kfwgruppe.net/dms_kfw/exe/eb.exe?cfgs=../cfgs/dmsapi.cfg&amp;p=d&amp;MaskName=dopendoc&amp;docid=d3be8fe6a-848b-11ee-8b51-ba4d577a6b9a">LINK Deploymentanweisung</a>
+Weitere Informationen sind im Betriebshandbuch, den README Dateien in den Repositories oder dem Azure DevOps Wiki des Projektes zu finden.</p>
+<h2 id="84-loggingerror-codes">8.4	Logging/Error-Codes</h2>
+<p>Logging innerhalb des KFN-Rechners erfolgt mittels Azure App Insights. Die Protokolle werden entweder direkt von Azure Gateway, Azure App Service oder anderen Azure-Diensten gesammelt. Diese Log-Dateien werden in einem Azure Analytics Log-Workspace und einem Azure Blob-Storage gespeichert.</p>
+<table>
+<thead>
+<tr>
+<th>Komponente</th>
+<th>Logging-Mechanismus</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alle</td>
+<td>Azure Monitor/Insight</td>
+</tr>
+</tbody></table>
+<p>Übersicht Logging der Komponenten
+<a id="tab17"> </a></p>
+<h3 id="841-übersicht">8.4.1	Übersicht</h3>
+<p>Nicht relevant.</p>
+<h3 id="842-applikationfunktionbatch">8.4.2	Applikation/Funktion/Batch</h3>
+<p>Nicht relevant.</p>
+<h2 id="85-infrastruktur-beschreibung">8.5	Infrastruktur Beschreibung</h2>
+<p>Die Cloud-Infrastruktur der Applikation liegt in der Landing Zone KFN Rechner <stage> und besteht aus einer Resource-Gruppen:</stage></p>
+<ul>
+<li>rg-kfnrechner-<stage>: alle Resourcen der Applikation, wie die App Services für Frontend, Middleware und Backend, das Application Gateway und der Storage Accounts etc.</stage></li>
+</ul>
+<p>Des Weiteren werden folgende Resourcengruppen automatisch angelegt, um den Compliance Standards der KfW zu genügen:
+-	NetworkWatcherRG: automatisch angelegte Resourcengruppe. Sie beinhaltet alle Resourcen zu Networkwatchern z.B. Flow Logs
+-	DefaultResourceGroup-WEU: automatisch angelegte Resourcengruppe. Sie beinhaltet alle Resourcen zu Security z.B. ThreatProtection</p>
+<p>Alle Resourcen sind an einem VNet verbunden (anhand VNet Integration und/oder Private Endpoints/Links). Das VNet enthält 5 Subnets um die Ressourcen von jedem Teil der Applikation entsprechend aufteilen zu können (Frontend, Backend, Middleware, Application Gateway, Private Endpoints). 
+Jedes Subnet hat eine Network Security Group die standardmäßig die Kommunikation zwischen Subnets im VNet erlaubt aber blockiert Inbound-Netzwerk-Verkehr aus dem Public-Internet. Die einzige Ausnahme ist das subnet-sanr-dev-004 an dem die Applikation Gateway verbunden ist, von daher werden die nötigen Ports entsprechend eingestellt.
+Eine dedizierte Key-Vault pro Umgebung speichert Secrets und Zertifikate der Applikation (z.B. TLS-Zertifikate für die Applikation Gateway werden in der Key-Vault von rg-sanr-dev Resource-Gruppe abgelagert).
+Alle Cloud-Resourcen verweigern Inbound-Netzwerk-Verkehr aus dem Public-Internet anhand Private Endpoints und/oder Private Links. Die einzigen Ausnahmen sind:
+-	Application Gateway, die erlaubt dem User Zugriff auf das Frontend der Applikation (und indirekt auch auf die Middleware, mit Anfragen durch das Frontend.)</p>
+<p>Das Frontend der Applikation ist eine React-App die in einem App Service ausgeführt wird und den Nutzern durch das Application Gateway zur Verfügung gestellt wird. </p>
+<p>Die Applikation besteht aus den folgenden Einzelkomponenten:
+-	Applikation Gateway
+-	Frontend</p>
+<p>Des Weiteren gibt es eine umfangreiche Buildstrecke bestehend aus:</p>
+<ul>
+<li>Frontend Codebase &amp; Pipeline (MeineKFW Portal DevOps <a href="https://dev.azure.com/3adev/_git/Meine-KfW-Portal">https://dev.azure.com/3adev/_git/Meine-KfW-Portal</a>)</li>
+<li>IaC Codebase &amp; Pipeline (Tilgungsrechner-WBS DevOps <a href="https://dev.azure.com/3adev/Tilgungsrechner-WBS/_git/KfN-Rechner-Infrastructure">https://dev.azure.com/3adev/Tilgungsrechner-WBS/_git/KfN-Rechner-Infrastructure</a>)</li>
+</ul>
+<h3 id="851-run">8.5.1	Run</h3>
+<h4 id="8511-applikation-gateway">8.5.1.1	Applikation Gateway</h4>
+<p>Das Applikation Gateway dient als Single Entry Point für die Applikation. Die Anwendung ist in Produktion lediglich über diesen Endpunkt erreichbar. Anfragen an das Application Gateway werden an das Frontend weitergeleitet.
+Der Nutzer greift auf die Applikation mittels HTTPS zu und erhält eine Website im Browser.</p>
+<h4 id="8512-frontend">8.5.1.2	Frontend</h4>
+<p>Das Frontend läuft innerhalb des Azure App Services. Das Frontend ist eine auf Node.js basierende React Webanwendung, die über Azure DevOps deployed wird. Die notwendigen Daten nach Absenden einer Anfrage im Web Frontend werden an die Middleware gesendet, die diese an das Backend weiterleitet. </p>
+<h3 id="852-deployment">8.5.2	Deployment</h3>
+<p>Infrastruktur:</p>
+<ul>
+<li>KfN-Rechner-Infrastructure DEV</li>
+<li>KfN-Rechner-Infrastructure TEST</li>
+</ul>
+<p>Frontend:</p>
+<ul>
+<li>KfN-Rechner Frontend Build</li>
+<li>KfN-Rechner Frontend Release</li>
+</ul>
+<p>Codebase:</p>
+<ul>
+<li>3adev/Tilgungsrechner-WBS/Repos/Files/KfN-Rechner-Infrastructure</li>
+<li>3adev/Tilgungsrechner-WBS/Repos/Files/KfN-Rechner-Pipelines</li>
+</ul>
+<h1 id="9-querschnittsthemen">9	Querschnittsthemen</h1>
+<table>
+<thead>
+<tr>
+<th>Kapitel</th>
+<th>Bereich/ Fachverfahren</th>
+<th>Relevanz</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9.1</td>
+<td>Berechtigungskonzept</td>
+<td>1</td>
+</tr>
+<tr>
+<td>9.2</td>
+<td>Datenschutz und IT Sicherheit* *(Wie von IT-Sicherheit gewünscht, erfolgte Abstimmung mit Cloud Security)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>9.3</td>
+<td>Auditing</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p><a id="tab20"> </a>
+Übersicht der übergreifenden Anforderungen</p>
+<h2 id="91-berechtigungskonzept">9.1	Berechtigungskonzept</h2>
+<p>Bezüglich des Berechtigungskonzepts ist das aBK führend und die folgenden Daten sind hier nur ergänzend zu sehen.
+Es gibt keine Benutzeridentifizierung bzw. Authentifizierung. Die Anwendung ist durch jede Person aufrufbar, welche über die Sanierungsrechner-URL verfügt. Die URL wird über das KfW-Partnerportal für die Bankpartner der KfW zur Verfügung gestellt. </p>
+<h3 id="911-angaben-zur-benutzeridentifizierung-bzw-authentifizierung">9.1.1	Angaben zur Benutzeridentifizierung bzw. –authentifizierung</h3>
+<p>Nicht relevant</p>
+<h3 id="912-prozess-der-provisionierung-der-berechtigungen">9.1.2	Prozess der Provisionierung der Berechtigungen</h3>
+<p>Nicht relevant</p>
+<h3 id="913-namenskonventionen-für-kennungen">9.1.3	Namenskonventionen für Kennungen</h3>
+<p>Nicht relevant</p>
+<h3 id="914-beschreibung-der-einzelberechtigungen-technischen-berechtigungen-und-rollen">9.1.4	Beschreibung der Einzelberechtigungen, technischen Berechtigungen und Rollen</h3>
+<p>Nicht relevant</p>
+<h3 id="915-besondere-kennungen">9.1.5	Besondere Kennungen</h3>
+<p>Nicht relevant</p>
+<h3 id="916-prozess-der-berechtigungsvergabe">9.1.6	Prozess der Berechtigungsvergabe</h3>
+<p>Nicht relevant</p>
+<h3 id="917-angabe-toxischer-berechtigungskombinationen">9.1.7	Angabe toxischer Berechtigungskombinationen</h3>
+<p>Nicht relevant</p>
+<h3 id="918-privilegierte-berechtigungen">9.1.8	Privilegierte Berechtigungen</h3>
+<p>Nicht relevant</p>
+<h2 id="92-datenschutz-und-it-sicherheit">9.2	Datenschutz und IT Sicherheit</h2>
+<h3 id="921-datenschutz">9.2.1	Datenschutz</h3>
+<p>Es werden keine personenbezogenen Daten (i.S. des Art. 4 EU-DSGVO) abgefragt, verwendet oder gespeichert.
+Die Datenverarbeitung in der Applikation dient ausschließlich der Erfüllung des Anwendungszwecks. 
+Nutzer geben im Frontend Daten zu ihrem Kredit ein, die über eine sichere Verbindung (HTTPS) an das Backend übertragen werden. </p>
+<h3 id="922-it-sicherheit">9.2.2	IT-Sicherheit</h3>
+<p>Die folgenden Aspekte sind im Kontext der IT-Sicherheit relevant: 
+•	Nur über Gateway erreichbar
+•	Web Application Firewall (WAF) des Application Gateways
+•	Private Endpoints sichern Azure Services
+•	NSGs (Network Security Groups)
+•	RBAC (Role Based Access Control)
+•	KfW Cloud Compliance Policies
+•	HTTPS
+•	Standardsecurity Azure
+•	Keine Abhängigkeit zu anderen Systemen
+•	Keine OnPremise Verbindungen
+•	Keine kritische Datenverarbeitung</p>
+<h4 id="9221-allgemein">9.2.2.1	Allgemein</h4>
+<p>Die Anwendung verarbeitet keine personenbezogenen Daten und keine Unternehmensdaten, sondern lediglich die Eingabedaten ohne Metadaten (IP, Absender, Kunde, etc). Des Weiteren hat das System keine Schnittstellen oder Abhängigkeiten zu anderen Systemen sowohl innerhalb der KfW als auch außerhalb. Es ist bereits out-of-the-box eine sehr geringe Angriffsfläche gegeben, da die Applikation (und APIs) aus dem Public Internet durch die Application Gateway + Web Application Firewall aufgerufen wird.</p>
+<h4 id="9222-plattform">9.2.2.2	Plattform</h4>
+<p>Um das Angriffsfeld weiter zu reduzieren, ist das System lediglich über das Applikation Gateway erreichbar, welches mit dem Frontend kommuniziert. Die restlichen Systeme (Backend, Datenhaltung, etc…) sind nicht direkt ansprechbar.
+Entsprechend den modernen Standards und den Anforderungen an moderne KfW Applikationen erfolgt die Kommunikation nach außen wie auch innerhalb der Services stehts mittels HTTPS.
+Die notwendigen Anforderungen entsprechend der VIV Einstufung von 1-2-2 sind berücksichtigt worden und entsprechend umgesetzt.
+Durch das Deployment in Azure ist natürlich auch bereits durch die Plattform ein hoher Sicherheitsstandard gegeben, da in den SLAs der Plattform die Sicherheit der Einzelnanwendungen berücksichtigt ist.</p>
+<h4 id="9223-anwendung">9.2.2.3	Anwendung</h4>
+<p>Die Entwicklung der Anwendung erfolgt in getrennten Repositories auf die nur die relevanten Entwickler Zugriff erhalten. In der ersten Releaseversion, wurden keine eigenen Entwicklungen durchgeführt, sondern nur bestehende Codebasen externer Dienstleister internalisiert. Lediglich kleinere optische Anpassungen sowie die Entfernung des Logins, da dieser nicht den KfW Standards genügte, wurden vorgenommen. Um hier das Thema Sicherheit tiefer zu beleuchten, wird im Rahmen der für Cloudanwendungen notwendigen Pen-Tests auch ein Codereview aller installierten Anwendungsbibliotheken durch externe Experten beantragt und die Optimierungsbefunde in die Applikation integriert.
+Bei jedem Build wird ein bestimmter Schritt ausgeführt, um sicherzustellen, dass die Infrastruktur auf bekannte Sicherheitsprobleme geprüft werden (Checkov). Werden kritische Probleme entdeckt, wird die Build-Pipeline mit einer Fehlermeldung gestoppt, wodurch das Entwicklungsteam sofort alarmiert wird. Auf diese Weise wird sichergestellt, dass bekannte Schwachstellen nicht in der Produktion eingesetzt werden.
+HTTP response headers Die Web Application Firewall von der Application Gateway implementiert den OWASP 3.1 Standard der 181 Regeln enthaltet um die Anwendung vor Angriffe entsprechend zu schützen.
+NSGs - Netzwerksicherheitsgruppen Azure-Netzwerksicherheitsgruppen werden verwendet, um den Netzwerkverkehr zu und von Azure-Ressourcen in einem virtuellen Azure-Netzwerk zu filtern. Eine Netzwerksicherheitsgruppe enthält Sicherheitsregeln, die eingehenden Netzwerkverkehr zu bzw. ausgehenden Netzwerkverkehr von verschiedenen Arten von Azure-Ressourcen zulassen oder verweigern. Die Netzwerksicherheitsgruppe wird von Terraform eingerichtet.</p>
+<h2 id="93-auditing">9.3	Auditing</h2>
+<p>Gegenwärtig können die folgenden Informationen für die Prüfung verwendet werden:
+Azure Application Insights dienen als zentrale Protokollierungs- und Überwachungslösung zum Sammeln aller Anwendungsprotokolle und enthalten auch mehrere Dashboards zur Überwachung der Benutzeraktivitäten (wie Anfragen usw.). In den Protokollanforderungen werden keine persönlichen Informationen gespeichert.
+Entsprechend der Anforderungen der KfW an Cloud Applikationen wird die Anwendung einem Pen-Test unterzogen.</p>
+<h3 id="931-datenmigration">9.3.1 Datenmigration</h3>
+<p>Nicht relevant.</p>
+<h1 id="10-offene-punkte-und-entscheidungsbedarf">10	Offene Punkte und Entscheidungsbedarf</h1>
+<p>|Nr.|	Offener Punkt|	eingestellt am|	Lösung|	Verantwortlicher|
+|----------------------|-------------|----------------------|-------------|-------------|					</p>
+<p><a id="tab22"> </a>
+Offene Punkte</p>
+
+	
+
+</body></html>
